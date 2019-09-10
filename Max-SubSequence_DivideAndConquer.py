@@ -37,7 +37,7 @@ def max_subsequence(A, low, high):
     mid = int(((low+high)/2))
     
     # Divides the array into two halves and recursively computes the 
-    indices and sum that corresponds to the highest possible sum in the subarrays
+    # indices and sum that corresponds to the highest possible sum in the subarrays
     (left_low_idx, left_high_idx, left_sub_sum) = max_subsequence(A, low, mid)
     (right_low_idx, right_high_idx, right_sub_sum) = max_subsequence(A, mid+1, high)
     (cross_low_idx, cross_high_idx, cross_sub_sum) = max_cross_subarray(A, low, mid, high)
