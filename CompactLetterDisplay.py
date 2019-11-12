@@ -1,3 +1,7 @@
+# Implementation of a Compact Letter Description Algortihm (CLD). 
+# Used in statistics to show a letter display of significant groups.
+# source: http://www.akt.tu-berlin.de/fileadmin/fg34/publications-akt/letter-displays-csda06.pdf
+
 import string
 import numpy as np
 import pandas as pd
@@ -104,4 +108,13 @@ significants = [('T1', 'T3'), ('T1','T3'),
                 ('T3','T5')]
 sorted_groups = ['T1','T2','T3', 'T4', 'T5']
 compact_letter_report(significants, sorted_groups)
+# Returns the following dataframe. 
+The interpretation is that T1 is significant to T3, T4 and T5 because they do not share a letter.
+This is also why T1 is not significant to T2. Also, we see that all groups are significant to T5 except T4.
+    A  B  C  D
+T1  A         
+T2  A  B      
+T3     B  C   
+T4        C  D
+T5           D
 """
